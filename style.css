@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: hsl(30, 38%, 92%);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin: 3em auto;
+}
+
+.grid {
+    max-width: 650px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image img {
+    max-width: 100%;
+    display: inherit;
+}
+
+.card-content {
+    margin: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-class {
+    color: hsl(228, 12%, 48%);
+    letter-spacing: .4em;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.product-name {
+    font-family: 'Fraunces', serif;
+    font-size: 2em;
+    color: hsl(212, 21%, 14%);
+}
+
+.description {
+    color: hsl(228, 12%, 48%);
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 100;
+}
+
+.prices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1em;
+}
+
+.new-price {
+    color: hsl(158, 36%, 37%);
+    font-family: 'Fraunces', serif;
+    font-size: 2em;
+}
+
+.old-price {
+    color: hsl(228, 12%, 48%);
+    text-decoration: line-through;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    cursor: pointer;
+    gap: .75em;
+    color: white;
+    background-color: hsl(158, 36%, 37%);
+    padding: 1.2em;
+    border-radius: .5em;
+    border: none;
+    width: 100%;
+}
+
+.button:where(:hover, :focus) {
+    background-color: hsl(156, 42%, 18%);
+}
+
+@media (max-width: 540px) {
+    .grid {
+        grid-template-columns: 1fr;
+        margin: 5%;
+    }
+
+    .card-content {
+        display: block;
+    }
+
+    .image img {
+        max-height: 350px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .product-class,
+    .product-name,
+    .description,
+    .prices {
+        margin-bottom: 20px;
+    }
+}
